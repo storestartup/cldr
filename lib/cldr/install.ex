@@ -59,7 +59,7 @@ defmodule Cldr.Install do
       ensure_client_dirs_exist!(client_locales_dir())
       Application.ensure_started(:inets)
       Application.ensure_started(:ssl)
-      do_install_locale(locale, locale in Cldr.all_locales())
+      do_install_locale(locale, locale in Cldr.Config.all_locales())
     else
       :already_installed
     end
